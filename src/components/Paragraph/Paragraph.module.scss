@@ -1,0 +1,11 @@
+@use "../../styles/variables" as *;
+
+.paragraph {
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-md;
+  line-height: $line-height-relaxed;
+  color: $color-text-secondary;
+  margin: 0;
+  max-width: 480px;
+}
