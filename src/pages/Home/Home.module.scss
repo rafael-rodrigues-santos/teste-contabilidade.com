@@ -71,11 +71,11 @@
 }
 
 .footerText {
-  margin-top: $spacing-md;
+  margin-top: $spacing-sm;
   font-family: $font-family-secondary;
   font-size: $font-size-xs;
-  color: $color-text-secondary;
-  opacity: 0.8;
+  color: $color-text-primary;
+  line-height: $line-height-relaxed;
 }
 
 // Thumbnail Wrapper
@@ -131,8 +131,6 @@
   position: relative;
   width: 100%;
   max-width: 800px;
-  // Removed overflow: hidden to allow button to be visible outside
-  // Moved layout properties to .videoWrapper
   animation: scaleIn 0.3s ease-out;
 }
 
@@ -153,13 +151,13 @@
 
 .closeButton {
   position: absolute;
-  top: -32px; // Position above the video
+  top: -32px; 
   right: 0;
   background: none;
   border: none;
   color: $color-white;
   cursor: pointer;
-  padding: $spacing-xs 0; // Reduce padding to align better
+  padding: $spacing-xs 0;
   display: flex;
   align-items: center;
   justify-content: center;
