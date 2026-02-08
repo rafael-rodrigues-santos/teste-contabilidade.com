@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from '../../components/Button';
+import { Button, Heading, Paragraph } from '../../components';
 import styles from './Home.module.scss';
 import thumbnailImage from '../../assets/img-quanto-custa.webp';
 
@@ -15,15 +15,16 @@ export const Home: React.FC = () => {
       <section className={styles.section}>
         <div className={styles.container}>
           <div className={styles.content}>
-            <h1 className={styles.title}>
-              Quanto custa<br />
-              a contabilidade<br />
-              online em {currentYear}?
-            </h1>
-
-            <p className={styles.description}>
-              Descubra os preços médios do mercado e veja como a contabilidade.com oferece planos acessíveis, abertura grátis e suporte completo para o seu CNPJ.
-            </p>
+            <div className={styles.header}>
+              <Heading>
+                Quanto custa<br />
+                a contabilidade<br />
+                online em {currentYear}?
+              </Heading>
+              <Paragraph>
+                Descubra os preços médios do mercado e veja como a contabilidade.com oferece planos acessíveis, abertura grátis e suporte completo para o seu CNPJ.
+              </Paragraph>
+            </div>
 
             <div className={styles.actions}>
               <Button onClick={() => console.log('Planos')}>
@@ -47,12 +48,6 @@ export const Home: React.FC = () => {
                 height="315"
               />
             </picture>
-
-            <div className={styles.playButton}>
-              <svg viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
           </div>
         </div>
       </section>

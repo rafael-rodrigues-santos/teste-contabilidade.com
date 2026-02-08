@@ -31,7 +31,7 @@
 
 .content {
   flex: 1;
-  max-width: 500px; // Limitando um pouco mais para alinhar com o design
+  max-width: 500px;
 
   @include mobile {
     display: flex;
@@ -41,28 +41,17 @@
   }
 }
 
-.title {
-  font-family: $font-family-primary;
-  font-weight: $font-weight-medium;
-  font-size: $font-size-3xl;
-  line-height: $line-height-normal;
-  letter-spacing: -0.01em;
-  color: $color-text-primary;
-  margin-bottom: $spacing-lg;
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+  text-align: left;
 
   @include mobile {
-    font-size: $font-size-2xl;
+    align-items: center;
+    text-align: center;
   }
-}
-
-.description {
-  font-family: $font-family-secondary;
-  font-weight: $font-weight-medium;
-  font-size: $font-size-md;
-  line-height: $line-height-relaxed;
-  color: $color-text-secondary;
-  margin-bottom: $spacing-xl;
-  max-width: 480px;
 }
 
 .actions {
