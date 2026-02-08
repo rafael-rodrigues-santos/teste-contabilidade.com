@@ -1,65 +1,63 @@
-@use "sass:color";
+@use "../../styles/variables" as *;
 
 .button {
-
-  $primary-color: #2B7ADF;
-  
   display: inline-flex;
   align-items: center;
   justify-content: center;
   
-  background-color: $primary-color;
-  color: #ffffff;
+  background-color: $color-primary;
+  color: $color-text-inverse;
   
-  width: 13.5625rem;
-  height: 2.875rem;
-  border-radius: 1rem;
-  padding: 1rem 0.5rem;
+  width: 13.5625rem;  // 217px
+  height: 2.875rem;   // 46px
+  border-radius: $border-radius-pill;
+  padding: $spacing-md $spacing-sm;
   
   border: none;
   cursor: pointer;
   
   // Estilos de fonte
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.5;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-relaxed;
   text-decoration: none;
   
-  transition: all 0.2s ease-in-out;
+  transition: $transition-default;
   
   // Foco para acessibilidade
   &:focus-visible {
     outline: 2px solid offset;
-    outline-color: $primary-color;
+    outline-color: $color-primary;
     outline-offset: 2px;
   }
 
-  // Efeitos de Hover: Sombra leve + Escurecer fundo
+  // Efeitos de Hover
   &:hover:not(:disabled) {
-    background-color: color.scale($primary-color, $lightness: -10%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: $color-primary-hover;
+    box-shadow: $shadow-md;
   }
 
   &:active:not(:disabled) {
     transform: translateY(1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: $shadow-sm;
   }
 
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-    background-color: #cccccc;
+    background-color: $color-disabled;
   }
   
   // Variante: Outline
   &--outline {
     background-color: transparent;
-    border: 1px solid $primary-color;
-    color: $primary-color;
+    border: 1px solid $color-primary;
+    color: $color-primary;
 
     &:hover:not(:disabled) {
-      background-color: rgba($primary-color, 0.05);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      background-color: $color-primary-light;
+      box-shadow: $shadow-md;
+      // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     }
   }
 }
