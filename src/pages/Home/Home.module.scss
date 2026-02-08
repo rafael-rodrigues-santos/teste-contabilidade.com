@@ -1,0 +1,192 @@
+@use "../../styles/variables" as *;
+
+.section {
+  background-color: $color-background-success-light;
+  padding: $spacing-3xl $spacing-xl;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include mobile {
+    padding: $spacing-2xl $spacing-lg;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-3xl;
+
+  @include mobile {
+    flex-direction: column;
+    gap: $spacing-2xl;
+    text-align: center;
+  }
+}
+
+.content {
+  flex: 1;
+  max-width: 500px; // Limitando um pouco mais para alinhar com o design
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+}
+
+.title {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-3xl;
+  line-height: $line-height-normal;
+  letter-spacing: -0.01em;
+  color: $color-text-primary;
+  margin-bottom: $spacing-lg;
+
+  @include mobile {
+    font-size: $font-size-2xl;
+  }
+}
+
+.description {
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-md;
+  line-height: $line-height-relaxed;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-xl;
+  max-width: 480px;
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-md;
+  align-items: center;
+
+  @include mobile {
+    flex-direction: column;
+    width: 100%;
+    
+    button {
+      width: 100% !important;
+      max-width: 320px;
+    }
+  }
+}
+
+.footerText {
+  margin-top: $spacing-md;
+  font-family: $font-family-secondary;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  opacity: 0.8;
+}
+
+// Thumbnail Wrapper
+.videoThumbnailWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 560px;
+  position: relative;
+  cursor: pointer;
+  transition: $transition-default;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-lg;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  picture {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-overlay;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: $spacing-md;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modalContent {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+  background-color: $color-black;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-modal;
+  overflow: hidden;
+  animation: scaleIn 0.3s ease-out;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: $color-white;
+  cursor: pointer;
+  padding: $spacing-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: $transition-default;
+  border-radius: 50%;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  @include mobile {
+    top: -40px;
+    right: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
