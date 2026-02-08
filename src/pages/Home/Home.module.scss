@@ -131,12 +131,18 @@
   position: relative;
   width: 100%;
   max-width: 800px;
+  // Removed overflow: hidden to allow button to be visible outside
+  // Moved layout properties to .videoWrapper
+  animation: scaleIn 0.3s ease-out;
+}
+
+.videoWrapper {
+  width: 100%;
   aspect-ratio: 16/9;
   background-color: $color-black;
   border-radius: $border-radius-md;
   box-shadow: $shadow-modal;
   overflow: hidden;
-  animation: scaleIn 0.3s ease-out;
 
   iframe {
     width: 100%;
@@ -147,25 +153,28 @@
 
 .closeButton {
   position: absolute;
-  top: -40px;
+  top: -32px; // Position above the video
   right: 0;
   background: none;
   border: none;
   color: $color-white;
   cursor: pointer;
-  padding: $spacing-sm;
+  padding: $spacing-xs 0; // Reduce padding to align better
   display: flex;
   align-items: center;
   justify-content: center;
   transition: $transition-default;
-  border-radius: 50%;
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-sm;
   
   &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: underline;
+    opacity: 0.9;
   }
   
   @include mobile {
-    top: -40px;
+    top: -32px;
     right: 0;
   }
 }
