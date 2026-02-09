@@ -6,16 +6,19 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: 'primary' | 'outline';
   fullWidth?: boolean;
+  width?: string | number;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   children,
   variant = 'primary',
   fullWidth = false,
+  width = '217px', // Largura padrão
   className = '',
+  style,
   ...props
 }) => {
-  // Combinar classes internas com qualquer classe personalizada passada via props
+  // Combina classes internas com qualquer classe personalizada passada via props
   const buttonClass = `
     ${styles.button} 
     ${variant === 'outline' ? styles['button--outline'] : ''} 
@@ -25,6 +28,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={buttonClass}
+      style={{ width, ...style }} // Aplica largura passada via props ao estilo inline
       {...props}
     >
       {children}

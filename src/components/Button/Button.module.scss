@@ -8,10 +8,12 @@
   background-color: $color-primary;
   color: $color-text-inverse;
   
-  width: 13.5625rem;  // 217px
-  height: 2.875rem;   // 46px
+  min-width: 217px;  // Largura mínima
+  width: auto;
+  height: auto;
+  min-height: 2.875rem;   // 46px
   border-radius: $border-radius-pill;
-  padding: $spacing-md $spacing-sm;
+  // padding: $spacing-md 46px; // Padding lateral 46px
   
   border: none;
   cursor: pointer;
