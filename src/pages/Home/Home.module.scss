@@ -1,17 +1,30 @@
 @use "../../styles/variables" as *;
 
 .section {
-  background-color: $color-background-success-light;
+  background-color: $color-white;
   padding: $spacing-3xl $spacing-xl;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 
   @include mobile {
     padding: $spacing-2xl $spacing-lg;
   }
+}
+
+.ellipseBg {
+  position: absolute;
+  width: 696px;
+  height: 696px;
+  top: -472px;
+  left: -77px;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .container {
@@ -21,6 +34,8 @@
   justify-content: space-between;
   align-items: center;
   gap: $spacing-3xl;
+  position: relative;
+  z-index: 1;
 
   @include mobile {
     flex-direction: column;

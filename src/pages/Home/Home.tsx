@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Heading, Paragraph, PlansSection } from '../../components';
 import styles from './Home.module.scss';
 import thumbnailImage from '../../assets/img-quanto-custa.webp';
+import ellipseImage from '../../assets/ellipse-1163.png';
 
 export const Home: React.FC = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -13,6 +14,7 @@ export const Home: React.FC = () => {
   return (
     <>
       <section className={styles.section}>
+        <img src={ellipseImage} alt="" className={styles.ellipseBg} aria-hidden="true" />
         <div className={styles.container}>
           <div className={styles.content}>
             <div className={styles.header}>
