@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Heading, Paragraph } from '../../components';
+import { Button, Heading, Paragraph, PlansSection } from '../../components';
 import styles from './Home.module.scss';
 import thumbnailImage from '../../assets/img-quanto-custa.webp';
 
@@ -51,6 +51,9 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Plans Section */}
+      <PlansSection />
 
       {/* Modal de Vídeo */}
       {isVideoOpen && (
