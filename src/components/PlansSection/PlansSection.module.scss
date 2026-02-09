@@ -1,0 +1,123 @@
+@use "../../styles/variables" as *;
+
+.section {
+  padding: $spacing-3xl $spacing-xl;
+  background-color: $color-background-light;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include mobile {
+    padding: $spacing-2xl $spacing-md;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-3xl;
+}
+
+.headerContainer {
+  width: 100%;
+  max-width: 535px;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-medium;
+  font-style: normal;
+  font-size: $font-size-3xl;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: $color-text-primary;
+  margin: 0;
+
+  @include mobile {
+    font-size: 1.5rem; // 24px
+  }
+}
+
+.boldText {
+  font-weight: 700;
+}
+
+.contentWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-2xl;
+  }
+}
+
+.imageWrapper {
+  flex-shrink: 0;
+  max-width: 500px;
+  border-radius: $border-radius-lg;
+  z-index: 20;
+  position: relative; 
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: $border-radius-lg;
+  }
+
+  @include mobile {
+    z-index: 1; 
+    max-width: 100%;
+  }
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: $spacing-xl;
+  margin-left: -176px; // Desktop: Puxa os cards para baixo da imagem
+  z-index: 10;
+  position: relative;
+
+  @include mobile {
+    margin-left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+// Loop para gerar z-indices empilhados para os cards
+@for $i from 1 through 5 {
+  .stackedCard:nth-child(#{$i}) {
+    z-index: #{$i}; // Z-index crescente para que o próximo card fique sobre o anterior
+    margin-top: 0;
+    margin-bottom: if($i == 5, 0, -22px); 
+
+    @include mobile {
+      z-index: #{$i}; 
+      margin-bottom: if($i == 5, 0, -22px); 
+    }
+  }
+}
+
+.ctaWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
