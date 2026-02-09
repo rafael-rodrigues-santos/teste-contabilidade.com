@@ -14,11 +14,13 @@ $color-text-primary: #1E2124;
 $color-text-secondary: #41484E;
 $color-text-inverse: #FFFFFF;
 
-$color-background-light: #F9F9F9;
+$color-background-light: #F6F6F6;
 $color-background-success-light: #f0fdf4;
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-overlay: rgba(0, 0, 0, 0.75);
+
+$color-disabled: #cccccc;
 
 // 2. Spacing
 // --------------------------------------------------------------------------
@@ -41,7 +43,7 @@ $font-size-sm: 0.875rem;   // 14px
 $font-size-md: 1rem;       // 16px
 $font-size-lg: 1.125rem;   // 18px
 $font-size-xl: 1.25rem;    // 20px
-$font-size-2xl: 1.75rem;   // 28px
+$font-size-2xl: 1.5rem;    // 24px
 $font-size-3xl: 2.25rem;   // 36px
 
 $font-weight-regular: 400;
